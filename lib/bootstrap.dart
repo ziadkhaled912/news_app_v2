@@ -37,6 +37,9 @@ Future<void> bootstrap() async {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
 
+   // Set orientation
+  await SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+  
   HydratedBloc.storage = await HydratedStorage.build(
     storageDirectory: await getApplicationDocumentsDirectory(),
   );
